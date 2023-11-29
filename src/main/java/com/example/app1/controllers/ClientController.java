@@ -13,7 +13,7 @@ public class ClientController {
 
     @Autowired
     private ClientRepository repoClient;
-    @GetMapping(path="/")  // GET  .../client
+    @GetMapping(path="")  // GET  .../client
     public List<Client> all() {
         return repoClient.findAll();
     }
@@ -23,7 +23,7 @@ public class ClientController {
     }
 
     @PostMapping(path = "") // POST .../client
-    public void insert(Client client) {
+    public void insert(@RequestBody Client client) {
         repoClient.save(client);
     }
 }
